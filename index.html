@@ -1,1 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Because You Won't™ - Minecraft Item Delivery Service</title>
+    <meta
+      name="description"
+      content="Professional in-game courier service for Minecraft. We haul your stuff across the Overworld while you build yet another storage room you'll never finish. Fast, reliable, and slightly chaotic."
+    />
+    <meta
+      name="keywords"
+      content="minecraft, delivery, courier, overworld, nether, items, coordinates, transport, gaming, blocks, survival"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+      <div class="scroll-progress-bar"></div>
+    </div>
 
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+      <a href="#submit-job" class="floating-btn submit-job" title="Submit Job" aria-label="Submit a delivery job">
+        📝
+        <span class="tooltip">Submit Job</span>
+      </a>
+      <a href="#pricing" class="floating-btn pricing" title="View Pricing" aria-label="View pricing information">
+        💰
+        <span class="tooltip">View Pricing</span>
+      </a>
+      <a href="#contact" class="floating-btn contact" title="Contact Me" aria-label="Contact for support">
+        💬
+        <span class="tooltip">Contact Me</span>
+      </a>
+      <button class="floating-btn back-to-top" title="Back to Top" aria-label="Scroll back to top">
+        ↑
+        <span class="tooltip">Back to Top</span>
+      </button>
+    </div>
+
+    <!-- Header/Hero Section -->
+    <header class="hero">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <div class="logo-container">
+              <span class="logo-icon">📦</span>
+              <span class="logo-text">Because You Won't™</span>
+              <span class="logo-tagline">Delivery Service</span>
+            </div>
+          </div>
+          <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#submit-job">Submit Job</a>
+            <a href="#rules">Rules</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div
+            class="mobile-menu-toggle"
+            role="button"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
+            tabindex="0"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+
+        <div class="hero-content" id="home">
+          <h1 class="hero-title">Because You Won't™</h1>
+          <p class="hero-subtitle">
+            Minecraft Courier & Transport (Sarcasm Included)
+          </p>
+          <p class="hero-tagline">
+            Professional in-game courier service. We haul your stuff across the
+            Overworld while you build yet another storage room you'll never
+            finish.
+          </p>
+          <p class="hero-extra">
+            Professional — in the same way villagers are professional
+            economists.
+          </p>
+          <div class="hero-buttons">
+            <a
+              href="#submit-job"
+              class="btn btn-primary"
+              role="button"
+              aria-label="Submit a delivery job"
+              title="Submit your nonsense here so I can carry your items while silently judging your life choices"
+              >Submit a Job</a
+            >
+            <a
+              href="#about"
+              class="btn btn-secondary"
+              role="button"
+              aria-label="Learn more about our services"
+              title="Learn about our professional procrastination services"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <main id="main-content">
+      <section class="about" id="about">
+        <div class="container">
+          <h2>📦 Stuff I'll Move If You Pay Me</h2>
+          <div class="about-grid">
+            <div class="about-card">
+              <div class="card-icon">📦</div>
+              <h3>Item Delivery 🧊</h3>
+              <p>
+                Need something moved from coords A to coords B? I'll handle it
+                with the enthusiasm of a villager stuck in a boat. Whether it's
+                a single shulker box or a double chest full of cobblestone
+                you've been hoarding for months.
+              </p>
+            </div>
+            <div class="about-card">
+              <div class="card-icon">🗺️</div>
+              <h3>Cross-Dimension Transport 🌀</h3>
+              <p>
+                Overworld, Nether, End - I don't discriminate against any
+                dimension, just your poor planning skills. I know the fastest
+                routes and safest passages, unlike you who probably gets lost in
+                your own base.
+              </p>
+            </div>
+            <div class="about-card">
+              <div class="card-icon">⚡</div>
+              <h3>Urgent Deliveries ⚡</h3>
+              <p>
+                Need it before your hunger bar depletes? I offer priority
+                delivery services for those "oh crap, I forgot my food" moments.
+                Rush jobs accepted (with appropriate payment in diamonds and the
+                right to laugh at your panic).
+              </p>
+            </div>
+            <div class="about-card">
+              <div class="card-icon">🛡️</div>
+              <h3>Insurance Options 🛡️</h3>
+              <p>
+                Because sometimes creepers happen, and I'm not responsible for
+                your trust issues. Optional insurance coverage for high-value
+                deliveries. Terms and conditions apply (obviously). Note: I am
+                not responsible for anything lost to lava, creeper explosions,
+                or your own stupidity.
+              </p>
+            </div>
+          </div>
+
+          <div class="company-story">
+            <h3>Why "Because You Won't™"? 🤷</h3>
+            <p>
+              Look, I get it. You've been meaning to move those shulker boxes
+              from your main base to your secondary outpost for weeks. You keep
+              telling yourself "I'll do it tomorrow" while they sit there,
+              taking up chest space and judging you silently. Well, now I'm
+              judging you too, but at least I'm getting paid for it.
+            </p>
+            <p>
+              That's where I come in. I'm a professional Minecraft courier who
+              specializes in doing the tedious transport jobs that you've been
+              procrastinating on. Judgment included free of charge, along with
+              efficient service and a healthy dose of attitude.
+            </p>
+            <p>
+              <strong
+                >Founded by a grinding professional who got tired of watching
+                everyone else's productivity decline while their item sorters
+                backed up longer than a Nether highway. 📉</strong
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <section class="pricing" id="pricing">
+        <div class="container">
+          <h2>💰 Payment Structure (Yes, I Actually Charge)</h2>
+          <p class="pricing-intro">
+            Shocked that professional services cost money? Welcome to capitalism, where your procrastination has a price tag. 💸
+          </p>
+
+          <!-- Pricing Navigation Tabs -->
+          <div class="pricing-tabs">
+            <button class="pricing-tab active" data-tab="standard">Standard Jobs</button>
+            <button class="pricing-tab" data-tab="premium">Premium Add-ons</button>
+            <button class="pricing-tab" data-tab="budget">Poor Person Menu™</button>
+          </div>
+
+          <!-- Standard Jobs Section -->
+          <div class="pricing-content active" id="standard-content">
+            <div class="pricing-category">
+              <h3>📦 Standard Jobs (The Basics You Should've Done Yourself)</h3>
+            <div class="pricing-grid">
+              <div class="pricing-card standard">
+                <div class="pricing-header">
+                  <h4>🚚 Basic Delivery</h4>
+                  <div class="price">2 💎</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>✅ Single dimension transport</li>
+                  <li>✅ Up to 1 shulker box worth</li>
+                  <li>✅ Basic route (no scenic detours)</li>
+                  <li>✅ Standard judgment levels</li>
+                </ul>
+              </div>
+
+              <div class="pricing-card standard">
+                <div class="pricing-header">
+                  <h4>🌀 Cross-Dimension</h4>
+                  <div class="price">+3 💎</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>✅ Nether/End transport</li>
+                  <li>✅ Portal coordination included</li>
+                  <li>✅ Hazard navigation</li>
+                  <li>✅ Extra sarcasm for danger pay</li>
+                </ul>
+              </div>
+
+              <div class="pricing-card standard">
+                <div class="pricing-header">
+                  <h4>📍 Coordinate Precision</h4>
+                  <div class="price">+1 💎</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>✅ Exact block placement</li>
+                  <li>✅ No "close enough" deliveries</li>
+                  <li>✅ GPS-level accuracy</li>
+                  <li>✅ Because details matter</li>
+                </ul>
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <!-- Premium Add-ons Section -->
+          <div class="pricing-content" id="premium-content">
+            <div class="pricing-category premium">
+              <h3>✨ Premium Add-ons (For When Money > Time)</h3>
+            <div class="pricing-grid">
+              <div class="pricing-card premium">
+                <div class="pricing-header">
+                  <h4>⚡ Rush Service</h4>
+                  <div class="price">+5 💎</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>🔥 "I needed this yesterday" speed</li>
+                  <li>🔥 Priority queue jumping</li>
+                  <li>🔥 Panic-induced efficiency</li>
+                  <li>🔥 Extra judgment for poor planning</li>
+                </ul>
+              </div>
+
+              <div class="pricing-card premium">
+                <div class="pricing-header">
+                  <h4>🛡️ Full Insurance</h4>
+                  <div class="price">+2 💎</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>🛡️ Creeper explosion coverage</li>
+                  <li>🛡️ Lava incident protection</li>
+                  <li>🛡️ PvP zone insurance</li>
+                  <li>🛡️ "Acts of Herobrine" clause</li>
+                </ul>
+              </div>
+
+              <div class="pricing-card premium">
+                <div class="pricing-header">
+                  <h4>🤫 Discrete Service</h4>
+                  <div class="price">+3 💎</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>🤫 No questions asked</li>
+                  <li>🤫 Stealth mode delivery</li>
+                  <li>🤫 Reduced judgment levels</li>
+                  <li>🤫 What items? I saw nothing</li>
+                </ul>
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <!-- Poor Person Menu Section -->
+          <div class="pricing-content" id="budget-content">
+            <div class="pricing-category budget">
+              <h3>🍜 Poor Person Menu™ (Creative Payment Solutions)</h3>
+            <p class="budget-intro">
+              Broke but desperate? I accept alternative forms of payment for those living that "cobblestone mansion" lifestyle. 💸
+            </p>
+            <div class="pricing-grid budget-grid">
+              <div class="pricing-card budget">
+                <div class="pricing-header">
+                  <h4>🥔 Bulk Resources</h4>
+                  <div class="price">Stack Trade</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>🥔 64 baked potatoes = 1 💎</li>
+                  <li>🌾 2 stacks wheat = 1 💎</li>
+                  <li>🪵 3 stacks logs = 1 💎</li>
+                  <li>📚 1 mending book = 3 💎 (if legit)</li>
+                </ul>
+              </div>
+
+              <div class="pricing-card budget">
+                <div class="pricing-header">
+                  <h4>⚒️ Labor Exchange</h4>
+                  <div class="price">Work Deal</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>⚒️ 30min mining = Basic delivery</li>
+                  <li>🧺 Organize MY storage = +5 💎 credit</li>
+                  <li>🏗️ Build me a house = Free service 1 month</li>
+                  <li>🎣 Catch me 64 fish = Cross-dimension fee waived</li>
+                </ul>
+              </div>
+
+              <div class="pricing-card budget special">
+                <div class="pricing-header">
+                  <h4>🎭 Entertainment Value</h4>
+                  <div class="price">Comedy Gold</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>🎭 Epic fail compilation = 2 💎 discount</li>
+                  <li>📺 Stream your attempts = Full coverage</li>
+                  <li>🎪 Public humiliation = Premium service</li>
+                  <li>🤡 Become my entertainment = Lifetime discount</li>
+                </ul>
+              </div>
+
+              <div class="pricing-card budget">
+                <div class="pricing-header">
+                  <h4>🍪 Bribery & Favors</h4>
+                  <div class="price">Negotiable</div>
+                </div>
+                <ul class="pricing-features">
+                  <li>🍪 IRL cookies mailed = Big discount</li>
+                  <li>☕ Good coffee recommendations = 💎 off</li>
+                  <li>🎵 Spotify playlist curation = Fee waived</li>
+                  <li>💡 Therapy sessions about life choices = ???</li>
+                </ul>
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <!-- Pricing Footer -->
+          <div class="pricing-footer">
+            <p><strong>💡 Pro Tips:</strong></p>
+            <ul>
+              <li>🎯 Bundle jobs for bulk discounts (because even I have a heart... sometimes)</li>
+              <li>📅 Off-peak hours = 20% discount (I'm not a monster)</li>
+              <li>🤝 Referrals = 1 💎 off next job (spread the procrastination)</li>
+              <li>⭐ 5-star review = Future priority service (bribery works)</li>
+            </ul>
+            <p class="pricing-disclaimer">
+              <em>Prices subject to change based on my mood, the alignment of the stars, and how much you annoy me during the negotiation process. All payments due upon completion because trust issues are real. 🤷‍♂️</em>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Submit Job Section -->
+      <section class="submit-job" id="submit-job">
+        <div class="container">
+          <h2>🧾 Job Form (Because Apparently You're Helpless)</h2>
+          <div class="job-submission-content">
+            <div class="form-info">
+              <h3>Ready to Get Your Stuff Moved? 📋</h3>
+              <p>
+                Click the button below to fill out my job submission form. I'll
+                review your request and get back to you with a quote faster than
+                you can say "inventory management" (which, let's be honest, you
+                clearly can't handle yourself).
+              </p>
+
+              <div class="form-fields-list">
+                <h4>What I'll Need From You (Try to Keep Up):</h4>
+                <ul>
+                  <li>
+                    <strong>Contact Name</strong> - So I know who to invoice and
+                    whose items to judge
+                  </li>
+                  <li>
+                    <strong>Pickup Coordinates</strong> - Where your stuff is
+                    hiding in shame
+                  </li>
+                  <li>
+                    <strong>Drop-off Coordinates</strong> - Where you want it to
+                    end up (hopefully not a lava pit or creeper nest)
+                  </li>
+                  <li>
+                    <strong>What's Being Delivered</strong> - Be specific, I'm
+                    not a mind reader (thank goodness)
+                  </li>
+                  <li>
+                    <strong>Urgency Level</strong> - How badly did you
+                    procrastinate this time?
+                  </li>
+                  <li>
+                    <strong>Insurance Option</strong> - Do you trust me with
+                    your valuables? (You shouldn't, but I'm honest about it)
+                  </li>
+                  <li>
+                    <strong>Deadline</strong> - When you actually need it
+                    (optional, unlike your procrastination)
+                  </li>
+                  <li>
+                    <strong>Notes or Warnings</strong> - Any security concerns,
+                    hazards, or ex-partners I should know about?
+                  </li>
+                  <li>
+                    <strong>Payment Offer</strong> - What you're willing to pay
+                    for not doing it yourself
+                  </li>
+                  <li>
+                    <strong>Contact Preference</strong> - How you want me to
+                    reach you when I'm done
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="form-action">
+              <form
+                action="https://formspree.io/f/xqabvypp"
+                method="POST"
+                class="job-submission-form"
+              >
+                <div class="form-group">
+                  <label for="contact-name">Contact Name (IGN):</label>
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="contact-name"
+                    required
+                    placeholder="Your Minecraft IGN"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="pickup-coords">Pickup Coordinates:</label>
+                  <input
+                    type="text"
+                    id="pickup-coords"
+                    name="pickup-coords"
+                    required
+                    placeholder="X, Y, Z (be specific, not 'near the big tree')"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="dropoff-coords">Drop-off Coordinates:</label>
+                  <input
+                    type="text"
+                    id="dropoff-coords"
+                    name="dropoff-coords"
+                    required
+                    placeholder="X, Y, Z (hopefully not a lava pit)"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="items">What's Being Delivered:</label>
+                  <textarea
+                    id="items"
+                    name="items"
+                    required
+                    placeholder="Be specific - I'm not psychic (thank goodness)"
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="urgency">Urgency Level:</label>
+                  <select id="urgency" name="urgency" required>
+                    <option value="">
+                      How badly did you procrastinate this time?
+                    </option>
+                    <option value="low">Low - I can wait (miracle!)</option>
+                    <option value="normal">
+                      Normal - Standard procrastination levels
+                    </option>
+                    <option value="high">High - I forgot this was due</option>
+                    <option value="emergency">
+                      Emergency - I'm panicking and it's my own fault
+                    </option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="insurance">Insurance Option:</label>
+                  <select id="insurance" name="insurance" required>
+                    <option value="">
+                      Do you trust me with your valuables?
+                    </option>
+                    <option value="none">
+                      No insurance - I live dangerously
+                    </option>
+                    <option value="basic">
+                      Basic coverage - For minor trust issues
+                    </option>
+                    <option value="full">
+                      Full coverage - I don't trust anyone
+                    </option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="deadline">Deadline:</label>
+                  <input
+                    type="text"
+                    id="deadline"
+                    name="deadline"
+                    placeholder="When you actually need it (optional, unlike your procrastination)"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="notes">Notes or Warnings:</label>
+                  <textarea
+                    id="notes"
+                    name="notes"
+                    placeholder="Any security concerns, hazards, or ex-partners I should know about?"
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="payment">Payment Offer:</label>
+                  <div class="payment-field-container">
+                    <input
+                      type="text"
+                      id="payment"
+                      name="payment"
+                      required
+                      placeholder="What you're willing to pay for not doing it yourself"
+                    />
+                    <button type="button" class="pricing-tooltip-trigger" aria-label="View pricing guide">💰</button>
+                    <div class="pricing-tooltip">
+                      <h4>💡 Quick Pricing Guide</h4>
+                      <div class="tooltip-pricing">
+                        <p><strong>Basic Delivery:</strong> 2💎</p>
+                        <p><strong>Cross-Dimension:</strong> +3💎</p>
+                        <p><strong>Rush Service:</strong> +5💎</p>
+                        <p><strong>Insurance:</strong> +2💎</p>
+                      </div>
+                      <p class="tooltip-note">See full pricing section for details!</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-preference">Contact Preference:</label>
+                  <select
+                    id="contact-preference"
+                    name="contact-preference"
+                    required
+                  >
+                    <option value="">
+                      How you want me to reach you when I'm done
+                    </option>
+                    <option value="discord">
+                      Discord - The civilized choice
+                    </option>
+                    <option value="minecraft">
+                      In-game message - Old school
+                    </option>
+                    <option value="email" disabled style="color: #999; font-style: italic;">Email - Nice try, but no 📧</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">
+                  Submit Job Request
+                </button>
+              </form>
+              <p class="form-note">
+                Form powered by Formspree<br />
+                <small
+                  >You can ask for rush service, but I reserve the right to
+                  laugh 🤡</small
+                ><br />
+                <em style="color: rgba(255, 255, 255, 0.8); font-style: italic; margin-top: 10px; display: block;">
+                  I'll message you if I decide you're worth it 💅
+                </em>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rules Section -->
+      <section class="rules" id="rules">
+        <div class="container">
+          <h2>🚫 Things I Refuse to Do (Don't Even Ask)</h2>
+          <p class="rules-intro">
+            Before you get any bright ideas, here's what I'm
+            <strong>NOT</strong> running. Read this twice if you need to:
+          </p>
+
+          <button class="rules-toggle" aria-expanded="false">
+            Click to Expand Full Rules & Terms
+          </button>
+
+          <div class="rules-content">
+            <div class="rules-grid">
+            <div class="rule-card no-service">
+              <div class="rule-icon">⛏️</div>
+              <h3>Mining Operations ⛏️</h3>
+              <p>
+                I don't mine your resources for you. That's called "grinding,"
+                which apparently you've forgotten how to do. If you want someone
+                to stare at stone for hours, get a pickaxe and some Netflix.
+              </p>
+            </div>
+
+            <div class="rule-card no-service">
+              <div class="rule-icon">🎯</div>
+              <h3>Crafting & Smelting 🎯</h3>
+              <p>
+                No, I won't craft 1000 items for your base. No, I won't smelt
+                your ores. No, I won't manage your villagers. Get a life. Or at
+                least some hoppers. Or both.
+              </p>
+            </div>
+
+            <div class="rule-card no-service">
+              <div class="rule-icon">🏗️</div>
+              <h3>Building Projects 🏗️</h3>
+              <p>
+                I move stuff, I don't build stuff. Your grand castle renovation
+                is your problem. I'll deliver the blocks, but the actual
+                building work is on you, chief.
+              </p>
+            </div>
+
+            <div class="rule-card no-service">
+              <div class="rule-icon">📦</div>
+              <h3>Storage Organization 📦</h3>
+              <p>
+                Your chest system that makes zero sense is YOUR chest system.
+                I'll dump your items in the designated area and walk away.
+                Sorting is extra (and by extra, I mean "not happening"). Can you
+                organize my storage room? Sure, right after I teach pillagers to
+                stop invading every 4 minutes.
+              </p>
+            </div>
+          </div>
+
+          <div class="terms-conditions">
+            <h3>🤡 Terms of Service (Also Known as "Common Sense")</h3>
+            <ul>
+              <li>
+                Payment is due upon completion. No "I'll pay you next week"
+                nonsense.
+              </li>
+              <li>
+                I'm not responsible for items lost to your own stupidity
+                (leaving chests unlocked, building in lava, forgetting to light
+                up your base, etc.)
+              </li>
+              <li>
+                Rush jobs cost extra. Your poor planning is not my emergency...
+                unless you pay for it to be.
+              </li>
+              <li>
+                I reserve the right to refuse service to anyone who asks me to
+                "just quickly" do something that's clearly not delivery.
+              </li>
+              <li>
+                All deliveries are final. No returns, no exchanges, no "can you
+                move it again?"
+              </li>
+              <li>
+                I'm professional, but I'm also slightly unhinged. Expect quality
+                service with a side of attitude.
+              </li>
+              <li>
+                How fast is my delivery? Somewhere between "Amazon drone" and
+                "molasses in January." 🐌
+              </li>
+            </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq" id="faq">
+        <div class="container">
+          <h2>
+            🤔 Frequently Asked Questions (Bitter Employee Handbook Edition)
+          </h2>
+          <p class="faq-intro">
+            Because apparently basic instructions aren't enough, here are the
+            questions I get asked daily:
+          </p>
+
+          <div class="faq-grid">
+            <div class="faq-item" data-faq="1">
+              <h3>Q: Can you sort my chests?</h3>
+              <div class="faq-answer">
+                <p>
+                  <strong>A:</strong> Sure, right after I alphabetize the internet
+                  and teach pillagers to stop invading every 4 minutes. 💀
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq="2">
+              <h3>Q: How fast is your delivery?</h3>
+              <div class="faq-answer">
+                <p>
+                  <strong>A:</strong> Somewhere between "elytra with fireworks"
+                  and "walking through soul sand." Depends on how many mobs I
+                  encounter and whether you actually gave me correct coordinates.
+                  🐌
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq="3">
+              <h3>Q: What if I don't know my coordinates?</h3>
+              <div class="faq-answer">
+                <p>
+                  <strong>A:</strong> Then I'll drop it in a swamp and hope you
+                  find it in 3 updates. Press F3, it's not rocket science. 🗺️
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq="4">
+              <h3>Q: Can you do this job for free since we're friends?</h3>
+              <div class="faq-answer">
+                <p>
+                  <strong>A:</strong> Friendship doesn't pay for my elytra
+                  repairs. Neither does exposure. Cold, hard diamonds only. 💎
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq="5">
+              <h3>Q: Why are you so sarcastic?</h3>
+              <div class="faq-answer">
+                <p>
+                  <strong>A:</strong> Years of watching people ask me to move
+                  their cobblestone collection while they start another unfinished
+                  castle have made me this way. It's a service industry side
+                  effect. 🏰
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq="6">
+              <h3>Q: What if something damages my stuff during delivery?</h3>
+              <div class="faq-answer">
+                <p>
+                  <strong>A:</strong> That's what insurance is for. Also, maybe
+                  don't store your valuables next to lava? Just a thought. 💥
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq="7">
+              <h3>Q: Can you build me a house while you're there?</h3>
+              <div class="faq-answer">
+                <p>
+                  <strong>A:</strong> Do I look like Bob the Builder? I deliver
+                  items, not life solutions. Learn the difference. 🔨
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-faq="8">
+              <h3>Q: What's your success rate?</h3>
+              <div class="faq-answer">
+                <p>
+                  <strong>A:</strong> 98% delivery success, 100% judgment delivery
+                  guaranteed. The 2% failure rate is usually client error
+                  (shocking, I know). 📊
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Contact Section -->
+    <footer class="contact" id="contact">
+      <div class="container">
+        <div class="contact-content">
+          <div class="contact-info">
+            <h2>💸 How You'll Bribe Me Into Doing This</h2>
+            <p>
+              Ready to stop procrastinating and get your delivery needs handled?
+              Here's how to reach me (spoiler: it's not smoke signals because
+              this isn't the stone age):
+            </p>
+
+            <div class="contact-methods">
+              <div class="contact-method">
+                <strong>Discord:</strong> NilsTG (same as my username
+                everywhere, because I'm consistent like that)
+              </div>
+              <div class="contact-method">
+                <strong>Direct Message:</strong> @NilsTG (revolutionary concept,
+                I know)
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-cta">
+            <h3>Business Hours ⏰</h3>
+            <p>
+              I operate on Central European Summer Time (GMT+2) aka Belgium time
+              - deal with it.
+            </p>
+            <p>
+              <strong>Student Job Schedule:</strong> Working 6am-4pm (corporate
+              slave hours)<br />
+              <strong>Actually Available:</strong> Around 7-8pm when I'm done
+              being exploited by capitalism<br />
+              <strong>Response Time:</strong> Usually decent unless I'm
+              questioning my life choices<br />
+              <strong>Emergency Deliveries:</strong> Available for premium rates
+              and emotional compensation
+            </p>
+
+            <div class="availability-notice">
+              <h4>🎵 Special Notice</h4>
+              <p>
+                <strong>July 17-27: UNAVAILABLE</strong><br />
+                I'll be at Tomorrowland living my best life while you're stuck
+                with your unorganized inventory. No service during this period
+                because some things are more important than your procrastination
+                habits. Plan accordingly (or don't, I'm not your mom).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Because You Won't™ Delivery Service. All rights
+            reserved. Professional transportation for the professionally lazy.
+          </p>
+          <p class="footer-tagline">
+            Professional item transportation for people with better things to do
+            (allegedly).
+          </p>
+          <p class="footer-disclaimer">
+            <small
+              >Because You Won't™ is not liable for missing items, creeper
+              explosions, emotional baggage, or existential dread. If you
+              experience nausea, rage-quitting, or an urge to do it yourself,
+              consult your base manager.<br />Minecraft is a trademark of Mojang
+              Studios. This is an unofficial fan service.<br /><br />🤖
+              <em
+                >Website built by AI because I was too lazy to code it myself.
+                Ironically, the AI now judges my life choices better than most
+                humans.</em
+              ></small
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>
