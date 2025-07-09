@@ -12,6 +12,14 @@
       name="keywords"
       content="minecraft, delivery, courier, overworld, nether, items, coordinates, transport, gaming, blocks, survival"
     />
+    <!-- Favicon and OG meta tags -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <meta property="og:title" content="Because You Won't™ - Minecraft Item Delivery Service" />
+    <meta property="og:description" content="Professional in-game courier service for Minecraft. We haul your stuff across the Overworld while you build yet another storage room you'll never finish. Fast, reliable, and slightly chaotic." />
+    <meta property="og:image" content="og-image.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,44 +51,45 @@
         💬
         <span class="tooltip">Contact Me</span>
       </a>
-      <button class="floating-btn back-to-top" title="Back to Top" aria-label="Scroll back to top">
+      <button class="floating-btn back-to-top" type="button" title="Back to Top" aria-label="Scroll back to top" role="button" aria-expanded="false">
         ↑
         <span class="tooltip">Back to Top</span>
       </button>
     </div>
 
     <!-- Header/Hero Section -->
-    <header class="hero">
-      <div class="container">
-        <nav class="navbar">
-          <div class="logo">
-            <div class="logo-container">
-              <span class="logo-icon">📦</span>
-              <span class="logo-text">Because You Won't™</span>
-              <span class="logo-tagline">Delivery Service</span>
+    <section id="home">
+      <header class="hero">
+        <div class="container">
+          <nav class="navbar">
+            <div class="logo">
+              <div class="logo-container">
+                <span class="logo-icon">📦</span>
+                <span class="logo-text">Because You Won't™</span>
+                <span class="logo-tagline">Delivery Service</span>
+              </div>
             </div>
-          </div>
-          <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#submit-job">Submit Job</a>
-            <a href="#rules">Rules</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-          </div>
-          <div
-            class="mobile-menu-toggle"
-            role="button"
-            aria-label="Toggle mobile menu"
-            aria-expanded="false"
-            tabindex="0"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </nav>
+            <div class="nav-links">
+              <a href="#home">Home</a>
+              <a href="#about">About</a>
+              <a href="#pricing">Pricing</a>
+              <a href="#submit-job">Submit Job</a>
+              <a href="#rules">Rules</a>
+              <a href="#faq">FAQ</a>
+              <a href="#contact">Contact</a>
+            </div>
+            <div
+              class="mobile-menu-toggle"
+              role="button"
+              aria-label="Toggle mobile menu"
+              aria-expanded="false"
+              tabindex="0"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </nav>
 
         <div class="hero-content" id="home">
           <h1 class="hero-title">Because You Won't™</h1>
@@ -116,7 +125,8 @@
           </div>
         </div>
       </div>
-    </header>
+      </header>
+    </section>
 
     <!-- About Section -->
     <main id="main-content">
@@ -202,14 +212,14 @@
           </p>
 
           <!-- Pricing Navigation Tabs -->
-          <div class="pricing-tabs">
-            <button class="pricing-tab active" data-tab="standard">Standard Jobs</button>
-            <button class="pricing-tab" data-tab="premium">Premium Add-ons</button>
-            <button class="pricing-tab" data-tab="budget">Poor Person Menu™</button>
+          <div class="pricing-tabs" role="tablist" aria-label="Pricing Tabs">
+            <button class="pricing-tab active" data-tab="standard" id="tab-standard" role="tab" aria-selected="true" aria-controls="standard-content">Standard Jobs</button>
+            <button class="pricing-tab" data-tab="premium" id="tab-premium" role="tab" aria-selected="false" aria-controls="premium-content">Premium Add-ons</button>
+            <button class="pricing-tab" data-tab="budget" id="tab-budget" role="tab" aria-selected="false" aria-controls="budget-content">Poor Person Menu™</button>
           </div>
 
           <!-- Standard Jobs Section -->
-          <div class="pricing-content active" id="standard-content">
+          <div class="pricing-content active" id="standard-content" role="tabpanel" aria-labelledby="tab-standard">
             <div class="pricing-category">
               <h3>📦 Standard Jobs (The Basics You Should've Done Yourself)</h3>
             <div class="pricing-grid">
@@ -256,7 +266,7 @@
           </div>
 
           <!-- Premium Add-ons Section -->
-          <div class="pricing-content" id="premium-content">
+          <div class="pricing-content" id="premium-content" role="tabpanel" aria-labelledby="tab-premium" hidden>
             <div class="pricing-category premium">
               <h3>✨ Premium Add-ons (For When Money > Time)</h3>
             <div class="pricing-grid">
@@ -303,7 +313,7 @@
           </div>
 
           <!-- Poor Person Menu Section -->
-          <div class="pricing-content" id="budget-content">
+          <div class="pricing-content" id="budget-content" role="tabpanel" aria-labelledby="tab-budget" hidden>
             <div class="pricing-category budget">
               <h3>🍜 Poor Person Menu™ (Creative Payment Solutions)</h3>
             <p class="budget-intro">
@@ -529,7 +539,7 @@
                 <div class="form-group">
                   <label for="deadline">Deadline:</label>
                   <input
-                    type="text"
+                    type="date"
                     id="deadline"
                     name="deadline"
                     placeholder="When you actually need it (optional, unlike your procrastination)"
@@ -585,7 +595,7 @@
                     <option value="minecraft">
                       In-game message - Old school
                     </option>
-                    <option value="email" disabled style="color: #999; font-style: italic;">Email - Nice try, but no 📧</option>
+                    <option value="email" disabled aria-disabled="true" style="color: #999; font-style: italic;">Email - Nice try, but no 📧</option>
                   </select>
                 </div>
 
@@ -716,18 +726,18 @@
           </p>
 
           <div class="faq-grid">
-            <div class="faq-item" data-faq="1">
-              <h3>Q: Can you sort my chests?</h3>
+            <details class="faq-item" data-faq="1">
+              <summary role="button" aria-expanded="false">Q: Can you sort my chests?</summary>
               <div class="faq-answer">
                 <p>
                   <strong>A:</strong> Sure, right after I alphabetize the internet
                   and teach pillagers to stop invading every 4 minutes. 💀
                 </p>
               </div>
-            </div>
+            </details>
 
-            <div class="faq-item" data-faq="2">
-              <h3>Q: How fast is your delivery?</h3>
+            <details class="faq-item" data-faq="2">
+              <summary role="button" aria-expanded="false">Q: How fast is your delivery?</summary>
               <div class="faq-answer">
                 <p>
                   <strong>A:</strong> Somewhere between "elytra with fireworks"
@@ -736,30 +746,30 @@
                   🐌
                 </p>
               </div>
-            </div>
+            </details>
 
-            <div class="faq-item" data-faq="3">
-              <h3>Q: What if I don't know my coordinates?</h3>
+            <details class="faq-item" data-faq="3">
+              <summary role="button" aria-expanded="false">Q: What if I don't know my coordinates?</summary>
               <div class="faq-answer">
                 <p>
                   <strong>A:</strong> Then I'll drop it in a swamp and hope you
                   find it in 3 updates. Press F3, it's not rocket science. 🗺️
                 </p>
               </div>
-            </div>
+            </details>
 
-            <div class="faq-item" data-faq="4">
-              <h3>Q: Can you do this job for free since we're friends?</h3>
+            <details class="faq-item" data-faq="4">
+              <summary role="button" aria-expanded="false">Q: Can you do this job for free since we're friends?</summary>
               <div class="faq-answer">
                 <p>
                   <strong>A:</strong> Friendship doesn't pay for my elytra
                   repairs. Neither does exposure. Cold, hard diamonds only. 💎
                 </p>
               </div>
-            </div>
+            </details>
 
-            <div class="faq-item" data-faq="5">
-              <h3>Q: Why are you so sarcastic?</h3>
+            <details class="faq-item" data-faq="5">
+              <summary role="button" aria-expanded="false">Q: Why are you so sarcastic?</summary>
               <div class="faq-answer">
                 <p>
                   <strong>A:</strong> Years of watching people ask me to move
@@ -768,30 +778,30 @@
                   effect. 🏰
                 </p>
               </div>
-            </div>
+            </details>
 
-            <div class="faq-item" data-faq="6">
-              <h3>Q: What if something damages my stuff during delivery?</h3>
+            <details class="faq-item" data-faq="6">
+              <summary role="button" aria-expanded="false">Q: What if something damages my stuff during delivery?</summary>
               <div class="faq-answer">
                 <p>
                   <strong>A:</strong> That's what insurance is for. Also, maybe
                   don't store your valuables next to lava? Just a thought. 💥
                 </p>
               </div>
-            </div>
+            </details>
 
-            <div class="faq-item" data-faq="7">
-              <h3>Q: Can you build me a house while you're there?</h3>
+            <details class="faq-item" data-faq="7">
+              <summary role="button" aria-expanded="false">Q: Can you build me a house while you're there?</summary>
               <div class="faq-answer">
                 <p>
                   <strong>A:</strong> Do I look like Bob the Builder? I deliver
                   items, not life solutions. Learn the difference. 🔨
                 </p>
               </div>
-            </div>
+            </details>
 
-            <div class="faq-item" data-faq="8">
-              <h3>Q: What's your success rate?</h3>
+            <details class="faq-item" data-faq="8">
+              <summary role="button" aria-expanded="false">Q: What's your success rate?</summary>
               <div class="faq-answer">
                 <p>
                   <strong>A:</strong> 98% delivery success, 100% judgment delivery
@@ -799,7 +809,7 @@
                   (shocking, I know). 📊
                 </p>
               </div>
-            </div>
+            </details>
           </div>
         </div>
       </section>

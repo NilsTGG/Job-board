@@ -170,67 +170,6 @@ function highlightActiveNavItem() {
 // SCROLL EFFECTS AND ANIMATIONS
 // =============================================================================
 
-function initializeScrollEffects() {
-    try {
-        // Navbar background on scroll
-        const navbar = document.querySelector('.navbar');
-        
-        if (navbar) {
-            window.addEventListener('scroll', function() {
-                try {
-                    if (window.scrollY > 100) {
-                        navbar.classList.add('scrolled');
-                    } else {
-                        navbar.classList.remove('scrolled');
-                    }
-                } catch (error) {
-                    console.error('Navbar scroll effect failed:', error);
-                }
-            });
-        }
-        
-        // Parallax effect for hero section
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            window.addEventListener('scroll', function() {
-                try {
-                    const scrolled = window.scrollY;
-                    const rate = scrolled * -0.5;
-                    hero.style.transform = `translateY(${rate}px)`;
-                } catch (error) {
-                    console.error('Parallax effect failed:', error);
-                }
-            });
-        }
-        
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                try {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-in');
-                    }
-                } catch (error) {
-                    console.error('Animation observer failed for element:', entry.target, error);
-                }
-            });
-        }, observerOptions);
-        
-        // Observe elements for animations
-        const animateElements = document.querySelectorAll('.about-card, .rule-card, .contact-method');
-        animateElements.forEach(element => {
-            observer.observe(element);
-        });
-        
-    } catch (error) {
-        console.error('Scroll effects initialization failed:', error);
-    }
-}
 
 // =============================================================================
 // FORM VALIDATION AND HANDLING
@@ -439,15 +378,18 @@ function initializeKonamiCode() {
     try {
         let konamiCode = '';
         const konamiSequence = 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightKeyBKeyA';
-        
+        const maxLen = 20; // Slightly more than 10 keys, since some codes are longer strings
+
         document.addEventListener('keydown', function(e) {
             try {
                 konamiCode += e.code;
-                
+
+                // If not a prefix, trim to last N chars (length of sequence)
                 if (konamiSequence.indexOf(konamiCode) !== 0) {
-                    konamiCode = '';
+                    // Keep only the last N characters (N = konamiSequence.length)
+                    konamiCode = konamiCode.slice(-konamiSequence.length);
                 }
-                
+
                 if (konamiCode === konamiSequence) {
                     activateEasterEgg();
                     konamiCode = '';
@@ -1186,33 +1128,45 @@ function initializePricingTabs() {
 function initializeCollapsibleFAQ() {
     try {
         const faqItems = document.querySelectorAll('.faq-item');
-        
+
         faqItems.forEach(item => {
             const header = item.querySelector('h3');
             const answer = item.querySelector('.faq-answer');
-            
+
             if (header && answer) {
+                // Set ARIA attributes and role
+                header.setAttribute('role', 'button');
+                header.setAttribute('aria-expanded', item.classList.contains('expanded') ? 'true' : 'false');
+                header.setAttribute('tabindex', '0');
+                header.style.cursor = 'pointer';
+
                 header.addEventListener('click', function() {
                     const isExpanded = item.classList.contains('expanded');
-                    
+
                     // Close all other FAQ items
                     faqItems.forEach(otherItem => {
                         if (otherItem !== item) {
                             otherItem.classList.remove('expanded');
+                            const otherHeader = otherItem.querySelector('h3');
+                            if (otherHeader) {
+                                otherHeader.setAttribute('aria-expanded', 'false');
+                            }
                         }
                     });
-                    
+
                     // Toggle current item
                     if (isExpanded) {
                         item.classList.remove('expanded');
+                        header.setAttribute('aria-expanded', 'false');
                     } else {
                         item.classList.add('expanded');
+                        header.setAttribute('aria-expanded', 'true');
                     }
-                    
+
                     // Track FAQ usage
                     const faqNumber = item.dataset.faq;
                     trackEvent('faq_clicked', 'interaction', faqNumber);
-                    
+
                     // Add personality feedback
                     const snarkMessages = [
                         "Another genius discovers the FAQ section exists",
@@ -1221,13 +1175,13 @@ function initializeCollapsibleFAQ() {
                         "Let me spell it out for you since subtlety is lost",
                         "FAQ opened - welcome to basic comprehension 101"
                     ];
-                    
+
                     if (!isExpanded) {
                         const randomSnark = snarkMessages[Math.floor(Math.random() * snarkMessages.length)];
                         console.log(`❓ ${randomSnark}`);
                     }
                 });
-                
+
                 // Add keyboard accessibility
                 header.addEventListener('keydown', function(e) {
                     if (e.key === 'Enter' || e.key === ' ') {
@@ -1235,12 +1189,9 @@ function initializeCollapsibleFAQ() {
                         header.click();
                     }
                 });
-                
-                header.setAttribute('tabindex', '0');
-                header.style.cursor = 'pointer';
             }
         });
-        
+
         console.log("❓ Collapsible FAQ initialized - now you can expand your ignorance one question at a time!");
     } catch (error) {
         console.error('Collapsible FAQ initialization failed:', error);
@@ -1255,11 +1206,16 @@ function initializeCollapsibleRules() {
     try {
         const rulesToggle = document.querySelector('.rules-toggle');
         const rulesContent = document.querySelector('.rules-content');
-        
+
         if (rulesToggle && rulesContent) {
+            // Set ARIA and role attributes initially
+            rulesToggle.setAttribute('role', 'button');
+            rulesToggle.setAttribute('aria-expanded', rulesToggle.classList.contains('expanded') ? 'true' : 'false');
+            rulesToggle.setAttribute('tabindex', '0');
+
             rulesToggle.addEventListener('click', function() {
                 const isExpanded = this.classList.contains('expanded');
-                
+
                 if (isExpanded) {
                     this.classList.remove('expanded');
                     rulesContent.classList.remove('expanded');
@@ -1273,13 +1229,13 @@ function initializeCollapsibleRules() {
                     this.textContent = 'Click to Collapse Rules & Terms';
                     console.log("📋 Rules expanded - welcome to reality, where I have standards");
                 }
-                
+
                 // Add the arrow back
                 this.textContent += this.classList.contains('expanded') ? ' ▲' : ' ▼';
-                
+
                 trackEvent('rules_toggled', 'interaction', isExpanded ? 'collapsed' : 'expanded');
             });
-            
+
             // Keyboard accessibility
             rulesToggle.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -1288,7 +1244,7 @@ function initializeCollapsibleRules() {
                 }
             });
         }
-        
+
         console.log("🚫 Collapsible rules initialized - now you can ignore my terms in a more organized way!");
     } catch (error) {
         console.error('Collapsible rules initialization failed:', error);
